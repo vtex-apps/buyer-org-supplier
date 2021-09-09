@@ -1,0 +1,11 @@
+{
+  "license": "MIT",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jsonwebtoken": "^8.5.4"
+  },
+  "dependencies": {
+    "@vtex/api": "6.45.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
