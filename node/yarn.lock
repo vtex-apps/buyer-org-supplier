@@ -24,6 +24,14 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/co-body@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@types/co-body/-/co-body-6.1.0.tgz#b52625390eb0d113c9b697ea92c3ffae7740cdb9"
+  integrity sha512-3e0q2jyDAnx/DSZi0z2H0yoZ2wt5yRDZ+P7ymcMObvq0ufWRT4tsajyO+Q1VwVWiv9PRR4W3YEjEzBjeZlhF+w==
+  dependencies:
+    "@types/node" "*"
+    "@types/qs" "*"
+
 "@types/connect@*":
   version "3.4.34"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.34.tgz#170a40223a6d666006d93ca128af2beb1d9b1901"
@@ -417,7 +425,7 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-co-body@^6.0.0:
+co-body@^6.0.0, co-body@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/co-body/-/co-body-6.1.0.tgz#d87a8efc3564f9bfe3aced8ef5cd04c7a8766547"
   integrity sha512-m7pOT6CdLN7FuXUcpuz/8lfQ/L77x8SchHCF4G0RBTJO20Wzmhn5Sp4/5WsKy8OSpifBSUrmg83qEqaDHdyFuQ==
@@ -1479,6 +1487,10 @@ vary@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+"vtex.buyer-org-supplier@https://gsasouza--b2bstore.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.0.0+build1631547075/public/_types/react":
+  version "0.0.0"
+  resolved "https://gsasouza--b2bstore.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.0.0+build1631547075/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 wrappy@1:
   version "1.0.2"

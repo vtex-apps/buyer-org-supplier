@@ -25,15 +25,16 @@ type BuyerOrgCompany = {
   updatedAt: Date
 }
 
-type BuyerOrgUser = {}
+type BuyerOrgUser = {
+  email: string
+}
 
 export type BuyerOrgRaw = {
   id: string
   tenantName: string
   createdAt: Date
   updatedAt: Date
-  firstUser: BuyerOrgUser
-  firstUserId: string
-  address: Addrees
+  sponsor: BuyerOrgUser
+  address: BuyerOrgAddress
   company: BuyerOrgCompany
 }
