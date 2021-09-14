@@ -1,7 +1,8 @@
 import type { ClientsConfig, ServiceContext } from '@vtex/api'
 import { LRUCache, method, Service } from '@vtex/api'
+
 import { Clients } from './clients'
-import { company } from './routes/company'
+import { createBuyerOrg } from './routes/createBuyerOrg'
 
 const TIMEOUT_MS = 800
 const memoryCache = new LRUCache<string, never>({ max: 5000 })
@@ -29,8 +30,8 @@ const clients: ClientsConfig<Clients> = {
 export default new Service({
   clients,
   routes: {
-    company: method({
-      GET: company
+    'buyer-org-supplier': method({
+      POST: createBuyerOrg,
     }),
   },
 })

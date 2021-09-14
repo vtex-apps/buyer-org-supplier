@@ -6,9 +6,9 @@
   "maxReplicas": 4,
   "workers": 1,
   "routes": {
-    "company": {
+    "buyer-org-supplier": {
       "public": true,
-      "path": "/_v/buyer-org/company/:token"
+      "path": "/buyer-org-supplier"
     }
   }
 }
