@@ -10,5 +10,6 @@
     "@vtex/api": "6.45.3",
     "co-body": "^6.1.0",
     "jsonwebtoken": "^8.5.1"
-  }
+  },
+  "version": "0.1.0"
 }
