@@ -1,5 +1,3 @@
-type Maybe<T> = T | null | undefined
-
 type BuyerOrgAddress = {
   id: string
   country: string
@@ -9,8 +7,8 @@ type BuyerOrgAddress = {
   neighborhood: string
   street: string
   streetNumber: string
-  complement: Maybe<string>
-  roomFloorUnit: Maybe<string>
+  complement?: string
+  roomFloorUnit?: string
   createdAt: Date
   updatedAt: Date
 }
@@ -20,7 +18,7 @@ type BuyerOrgCompany = {
   corporateDocument: string
   companyName: string
   tradeName: string
-  stateRegistration: Maybe<string>
+  stateRegistration?: string
   createdAt: Date
   updatedAt: Date
 }

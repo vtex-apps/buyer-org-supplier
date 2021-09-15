@@ -1,6 +1,6 @@
 interface Address {
-  id: string
-  userId: string
+  id?: string
+  userId?: string
   receiverName?: string
   complement?: string
   neighborhood?: string
