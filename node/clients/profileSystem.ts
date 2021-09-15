@@ -19,8 +19,26 @@ export class ProfileSystemClient extends JanusClient {
     })
   }
 
-  public createProfile = (profile: Profile) =>
-    this.post(this.baseUrl, { personalData: profile })
+  private getUserIdentification = (user: Profile) =>
+    user.userId ?? encodeURIComponent(user.email)
+
+  public createProfile = (profile: any) =>
+    this.post(
+      this.baseUrl,
+      { personalData: profile },
+      {
+        metric: 'profile-system-updateAddress',
+      }
+    )
+
+  public updateAddress = (user: Profile, addressesData: any) =>
+    this.post(
+      `${this.baseUrl}/${this.getUserIdentification(user)}/addresses`,
+      addressesData,
+      {
+        metric: 'profile-system-updateAddress',
+      }
+    )
 
   protected post = <T>(url: string, data?: unknown, config?: RequestConfig) =>
     this.http.post<T>(url, data, config).catch<AxiosError>(statusToError)

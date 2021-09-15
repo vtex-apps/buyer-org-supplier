@@ -7,17 +7,33 @@ export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
 
   const body: BuyerOrgRaw = await parse.json(req)
 
-  const { address, company, sponsor } = body
+  const { sponsor } = body
 
-  const profile = {
-    email: sponsor.email,
-    firstName: company.companyName,
-    approved: false,
-    isCorporate: true,
-    address,
+  const { zipCode, streetNumber } = body.address
+  const { companyName, tradeName, corporateDocument } = body.company
+
+  const address = {
+    ...body.address,
+    postalCode: zipCode,
+    number: streetNumber,
   }
 
+  const profile = {
+    userId: sponsor.email,
+    email: sponsor.email,
+    firstName: tradeName,
+    approved: false,
+    isCorporate: true,
+    corporateName: companyName,
+    tradeName,
+    corporateDocument,
+  }
+
+  const addresses = { Default: address }
+
   await clients.profileSystem.createProfile(profile)
+
+  await clients.profileSystem.updateAddress(profile, addresses)
 
   ctx.status = 200
 
