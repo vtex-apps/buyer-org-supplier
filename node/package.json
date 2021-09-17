@@ -7,7 +7,7 @@
     "vtex.buyer-org-supplier": "https://gsasouza--b2bstore.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.0.0+build1631547075/public/_types/react"
   },
   "dependencies": {
-    "@vtex/api": "6.45.3",
+    "@vtex/api": "6.45.4",
     "co-body": "^6.1.0",
     "jsonwebtoken": "^8.5.1"
   },

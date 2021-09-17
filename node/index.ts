@@ -32,6 +32,14 @@ export default new Service({
   routes: {
     'buyer-org-supplier': method({
       POST: createBuyerOrg,
+      OPTIONS: async (ctx) => {
+        ctx.set('Cache-Control', 'no-cache ')
+        ctx.set('Access-Control-Allow-Origin', '*')
+        ctx.set('Access-Control-Allow-Methods', '*')
+        ctx.set('Access-Control-Allow-Credentials', 'true')
+        ctx.set('Access-Control-Allow-Headers', '*')
+        ctx.status = 200
+      },
     }),
   },
 })
