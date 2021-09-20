@@ -3,6 +3,13 @@ import parse from 'co-body'
 import type { BuyerOrgRaw } from '../typings/buyerOrgService'
 
 export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
+  ctx.set('Cache-Control', 'no-cache ')
+  ctx.set('Access-Control-Allow-Origin', '*')
+  ctx.set('Access-Control-Allow-Methods', '*')
+  ctx.set('Access-Control-Allow-Credentials', 'true')
+  ctx.set('Access-Control-Allow-Headers', '*')
+  ctx.status = 200
+
   const { clients, req } = ctx
 
   const body: BuyerOrgRaw = await parse.json(req)
