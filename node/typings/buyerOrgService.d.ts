@@ -19,7 +19,6 @@ type BuyerOrgCompany = {
   companyName: string
   tradeName: string
   stateRegistration?: string
-  email: string
 }
 
 export type BuyerOrgRaw = {
@@ -27,6 +26,7 @@ export type BuyerOrgRaw = {
   tenantName: string
   createdAt: Date
   updatedAt: Date
+  sponsorEmail: string
   address: BuyerOrgAddress
   company: BuyerOrgCompany
 }
