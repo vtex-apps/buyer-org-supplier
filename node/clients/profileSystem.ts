@@ -27,7 +27,7 @@ export class ProfileSystemClient extends JanusClient {
       this.baseUrl,
       { personalData: profile },
       {
-        metric: 'profile-system-updateAddress',
+        metric: 'profile-system-createProfile',
       }
     )
 

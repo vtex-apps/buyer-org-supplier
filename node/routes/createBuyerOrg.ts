@@ -14,8 +14,6 @@ export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
 
   const body: BuyerOrgRaw = await parse.json(req)
 
-  const { sponsor } = body
-
   const { zipCode, streetNumber } = body.address
   const { companyName, tradeName, corporateDocument } = body.company
 
@@ -26,8 +24,8 @@ export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
   }
 
   const profile = {
-    userId: sponsor.email,
-    email: sponsor.email,
+    userId: body.organizationEmail,
+    email: body.organizationEmail,
     firstName: tradeName,
     approved: false,
     isCorporate: true,
