@@ -11,5 +11,5 @@
     "co-body": "^6.1.0",
     "jsonwebtoken": "^8.5.1"
   },
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
