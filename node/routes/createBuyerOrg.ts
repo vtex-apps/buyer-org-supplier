@@ -41,6 +41,7 @@ export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
   await clients.profileSystem.updateAddress(profile, addresses)
 
   ctx.status = 200
+  ctx.body = ''
 
   await next()
 }
