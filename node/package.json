@@ -4,7 +4,7 @@
     "@types/axios": "^0.14.0",
     "@types/co-body": "^6.1.0",
     "@types/jsonwebtoken": "^8.5.4",
-    "vtex.buyer-org-supplier": "https://gsasouza--b2bstore.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.0.0+build1631547075/public/_types/react"
+    "vtex.buyer-org-supplier": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.buyer-org-supplier@0.4.1/public/_types/react"
   },
   "dependencies": {
     "@vtex/api": "6.45.4",

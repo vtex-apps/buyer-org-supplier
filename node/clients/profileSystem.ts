@@ -3,7 +3,7 @@ import { JanusClient } from '@vtex/api'
 import type { AxiosError } from 'axios'
 
 import { statusToError } from '../utils/statusCodeUtils'
-import type { Profile } from '../typings/profileSystem'
+import type { CurrentProfile, Profile } from '../typings/profileSystem'
 
 const FIVE_SECONDS_MS = 5 * 1000
 
@@ -19,8 +19,19 @@ export class ProfileSystemClient extends JanusClient {
     })
   }
 
-  private getUserIdentification = (user: Profile) =>
+  private getUserIdentification = (user: CurrentProfile) =>
     user.userId ?? encodeURIComponent(user.email)
+
+  public getProfileInfo = (user: CurrentProfile, customFields?: string) =>
+    this.get<Profile>(
+      `${this.baseUrl}/${this.getUserIdentification(user)}/personalData`,
+      {
+        metric: 'profile-system-getProfileInfo',
+        params: {
+          extraFields: customFields,
+        },
+      }
+    )
 
   public createProfile = (profile: any) =>
     this.post(
@@ -42,6 +53,9 @@ export class ProfileSystemClient extends JanusClient {
 
   protected post = <T>(url: string, data?: unknown, config?: RequestConfig) =>
     this.http.post<T>(url, data, config).catch<AxiosError>(statusToError)
+
+  protected get = <T>(url: string, config?: RequestConfig) =>
+    this.http.get<T>(url, config).catch<AxiosError>(statusToError)
 
   private baseUrl = '/api/profile-system/pvt/profiles'
 }
