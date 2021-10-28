@@ -1,3 +1,5 @@
+import type { Maybe } from '@vtex/api'
+
 interface Address {
   id?: string
   userId?: string
@@ -22,7 +24,7 @@ export interface Profile {
   profilePicture?: string
   email: string
   document?: string
-  userId?: string
+  userId: string
   birthDate?: string
   gender?: string
   homePhone?: string
@@ -36,4 +38,10 @@ export interface Profile {
   tradeName?: string
   payments?: PaymentProfile[]
   customFields?: ProfileCustomField[]
+  createdIn?: Maybe<Date>
+}
+
+interface CurrentProfile {
+  email: string
+  userId: string
 }
