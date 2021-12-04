@@ -22,11 +22,11 @@ export class CLClient extends JanusClient {
     })
   }
 
-  public getCLData = (userId: string, customFields?: string) =>
-    this.get<CLSchema>(
-      this.baseUrl(userId),
+  public getClientData = (userId: string, customFields?: string): Promise<CLSchema[] | AxiosError> =>
+    this.get<CLSchema[]>(
+      this.searchPathByUserId(userId),
       {
-        metric: 'profile-system-getProfileInfo',
+        metric: 'cl-getCLData',
         params: {
           extraFields: customFields,
         },
@@ -36,5 +36,5 @@ export class CLClient extends JanusClient {
   protected get = <T>(url: string, config?: RequestConfig) =>
     this.http.get<T>(url, config).catch<AxiosError>(statusToError)
 
-  private baseUrl = (userId: string) => `/api/dataentities/CL/search?_fields=_all&_where=userId=${userId}`
+  private searchPathByUserId = (userId: string) => `/api/dataentities/CL/search?_fields=_all&_where=userId=${userId}`
 }

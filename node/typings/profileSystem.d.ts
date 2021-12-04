@@ -43,5 +43,5 @@ export interface Profile {
 
 interface CurrentProfile {
   email: string
-  userId: string
+  userId?: string
 }
