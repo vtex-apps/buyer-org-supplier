@@ -2,6 +2,8 @@ import parse from 'co-body'
 
 import type { BuyerOrgRaw } from '../typings/buyerOrgService'
 import type { Profile } from '../typings/profileSystem'
+import { CLSchema } from "../clients/clClient";
+import { ProfileCreationResponse } from "../clients/profileSystem";
 
 export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
   const { clients, req } = ctx
@@ -45,17 +47,20 @@ export async function createBuyerOrg(ctx: Context, next: () => Promise<void>) {
 
     const addresses = { Default: address }
 
-    await clients.profileSystem.createProfile(profile)
+    var profileData = await clients.profileSystem.createProfile(profile)
+    var clData = await clients.clClient.getCLData((profileData as ProfileCreationResponse).profileId)
 
     await clients.profileSystem.updateAddress(profile, addresses)
 
     ctx.status = 200
     ctx.body = {
       message: 'Buyer Organization created',
+      id: (clData as CLSchema).id
     }
 
-    await next()
+    return next()
   } catch (error) {
+    console.log('an error occurred when creating the BO in the profile', req)
     ctx.status = 500
     ctx.body = {
       message: error,
