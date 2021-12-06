@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "buyer-org-supplier",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "title": "Buyer Organization Supplier",
   "description": "A app for handle buyer organizations feature for suppliers",
   "builders": {
