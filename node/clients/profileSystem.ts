@@ -1,11 +1,15 @@
-import type { InstanceOptions, IOContext, RequestConfig } from '@vtex/api'
-import { JanusClient } from '@vtex/api'
-import type { AxiosError } from 'axios'
+import type {InstanceOptions, IOContext, RequestConfig} from '@vtex/api'
+import {JanusClient} from '@vtex/api'
+import type {AxiosError} from 'axios'
 
-import { statusToError } from '../utils/statusCodeUtils'
-import type { CurrentProfile, Profile } from '../typings/profileSystem'
+import {statusToError} from '../utils/statusCodeUtils'
+import type {CurrentProfile, Profile} from '../typings/profileSystem'
 
 const FIVE_SECONDS_MS = 5 * 1000
+
+export type ProfileCreationResponse = {
+  profileId: string
+}
 
 export class ProfileSystemClient extends JanusClient {
   constructor(context: IOContext, options?: InstanceOptions) {
@@ -33,8 +37,8 @@ export class ProfileSystemClient extends JanusClient {
       }
     )
 
-  public createProfile = (profile: any) =>
-    this.post(
+  public createProfile = (profile: any): Promise<ProfileCreationResponse | AxiosError> =>
+    this.post<ProfileCreationResponse>(
       this.baseUrl,
       { personalData: profile },
       {
