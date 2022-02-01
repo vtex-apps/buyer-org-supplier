@@ -14,6 +14,7 @@
     "@types/node": "^11.12.1",
     "@types/react": "^16.8.10",
     "@vtex/tsconfig": "^0.4.4",
+    "vtex.buyer-org-supplier": "https://dev--vbustamonte.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.6.0+build1643737763/public/@types/vtex.buyer-org-supplier",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.132.3/public/@types/vtex.render-runtime"
   }
 }

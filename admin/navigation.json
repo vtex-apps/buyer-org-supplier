@@ -1,7 +1,7 @@
 [
   {
     "section": "customer",
-    "titleId": "buyer-organizations-supplier.admin.navigation.label-group",
+    "titleId": "buyer-organizations-supplier.admin.navigation.label-bo",
     "path": "/admin/buyer-organizations"
   }
 ]
