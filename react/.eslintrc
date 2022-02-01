@@ -1,0 +1,7 @@
+{
+  "extends": "vtex-react/io",
+  "root": true,
+  "env": {
+    "browser": true
+  }
+}

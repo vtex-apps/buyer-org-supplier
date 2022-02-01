@@ -1,0 +1,6 @@
+{
+  "admin.app.buyer-org-list": {
+    "component": "BuyerOrgListEntry",
+    "path": "/admin/app/buyer-organizations"
+  }
+}
