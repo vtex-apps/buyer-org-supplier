@@ -12,46 +12,32 @@ import {
   DataGrid,
   DataView,
 } from '@vtex/admin-ui'
+import { useQuery } from 'react-apollo'
 
 import BuyerOrgListToggle from './BuyerOrgListToggle'
+import type { Result } from './graphql/listBOs.gql'
+import QUERY from './graphql/listBOs.gql'
 
 const [ThemeProvider] = createSystem({
   key: 'buyer-org-supplier',
 })
 
-const dummyBOs: Array<{
-  id: string
-  name: string
-  approved: boolean
-}> = [
-  {
-    id: 'CL-461dde1b-2dbd-4ddb-8eba-f33a4f2b000b',
-    name: 'RoyalCup John',
-    approved: true,
-  },
-  {
-    id: 'CL-f5767052-b6b1-4652-87fc-7ccccfe53d71',
-    name: 'RoyalCup Chris',
-    approved: false,
-  },
-  {
-    id: 'CL-aea191a3-e63f-48c6-87f3-cf63044d15c7',
-    name: 'RoyalCup Steven',
-    approved: false,
-  },
-]
-
 function BuyerOrgList() {
   const view = useDataViewState()
   const search = useSearchState()
+  const queryResult = useQuery<Result>(QUERY)
 
   const searchedItems = React.useMemo(() => {
-    return dummyBOs.filter((item) =>
+    if (queryResult.loading || queryResult.data === undefined) return []
+
+    const BOs = (queryResult.data as Result).buyerOrganizationsOnSupplier
+
+    return BOs.filter((item) =>
       item.name
         .toLowerCase()
         .includes(search.debouncedValue.toLocaleLowerCase())
     )
-  }, [search])
+  }, [queryResult.loading, queryResult.data, search.debouncedValue])
 
   const grid = useDataGridState({
     view,

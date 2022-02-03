@@ -2,19 +2,20 @@
   "name": "vtex.buyer-org-supplier",
   "version": "0.6.0",
   "dependencies": {
-    "typescript": "3.9.7",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "@vtex/admin-ui": "^0.117.0",
     "faker": "^5.5.3",
-    "react-intl": "^5.21.0"
+    "react": "^16.8.6",
+    "react-apollo": "3.x",
+    "react-dom": "^16.8.6",
+    "react-intl": "3.x",
+    "typescript": "3.9.7"
   },
   "devDependencies": {
     "@types/faker": "^5.5.9",
     "@types/node": "^11.12.1",
     "@types/react": "^16.8.10",
     "@vtex/tsconfig": "^0.4.4",
-    "vtex.buyer-org-supplier": "https://dev--vbustamonte.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.6.0+build1643837777/public/@types/vtex.buyer-org-supplier",
+    "vtex.buyer-org-supplier": "https://dev--vbustamonte.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.6.0+build1643896159/public/@types/vtex.buyer-org-supplier",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.132.3/public/@types/vtex.render-runtime"
   }
 }

@@ -24,7 +24,7 @@ function buyerOrganizationsOnSupplier(
   ]
 }
 
-function updateBuyerOrg(
+function updateBuyerOrganizationContract(
   _: unknown,
   { input }: { input: { id: string; approved: boolean } },
   __: Context
@@ -37,6 +37,6 @@ export const resolvers = {
     buyerOrganizationsOnSupplier,
   },
   Mutation: {
-    updateBuyerOrg,
+    updateBuyerOrganizationContract,
   },
 }

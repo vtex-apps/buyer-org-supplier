@@ -1,0 +1,7 @@
+query listBOs {
+  buyerOrganizationsOnSupplier {
+    id
+    name
+    approved
+  }
+}
