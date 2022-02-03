@@ -4,7 +4,7 @@
     "@types/axios": "^0.14.0",
     "@types/co-body": "^6.1.0",
     "@types/jsonwebtoken": "^8.5.4",
-    "vtex.buyer-org-supplier": "https://dev--vbustamonte.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.6.0+build1643737763/public/@types/vtex.buyer-org-supplier"
+    "vtex.buyer-org-supplier": "https://dev--vbustamonte.myvtex.com/_v/private/typings/linked/v1/vtex.buyer-org-supplier@0.6.0+build1643837777/public/@types/vtex.buyer-org-supplier"
   },
   "dependencies": {
     "@vtex/api": "6.45.6",

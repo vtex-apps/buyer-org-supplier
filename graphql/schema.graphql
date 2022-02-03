@@ -1,0 +1,7 @@
+type Query {
+  buyerOrganizationsOnSupplier: [BuyerOrganization!]!
+}
+
+type Mutation {
+  updateBuyerOrg(input: BuyerOrganizationInput!): BuyerOrganization!
+}

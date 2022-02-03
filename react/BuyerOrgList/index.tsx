@@ -25,19 +25,19 @@ const dummyBOs: Array<{
   approved: boolean
 }> = [
   {
-    id: '1',
-    name: 'RoyalCup Arizona',
+    id: 'CL-461dde1b-2dbd-4ddb-8eba-f33a4f2b000b',
+    name: 'RoyalCup John',
     approved: true,
   },
   {
-    id: '2',
-    name: 'RoyalCup 2',
+    id: 'CL-f5767052-b6b1-4652-87fc-7ccccfe53d71',
+    name: 'RoyalCup Chris',
     approved: false,
   },
   {
-    id: '3',
-    name: 'RoyalCup Rio',
-    approved: true,
+    id: 'CL-aea191a3-e63f-48c6-87f3-cf63044d15c7',
+    name: 'RoyalCup Steven',
+    approved: false,
   },
 ]
 
@@ -49,7 +49,7 @@ function BuyerOrgList() {
     return dummyBOs.filter((item) =>
       item.name
         .toLowerCase()
-        .startsWith(search.debouncedValue.toLocaleLowerCase())
+        .includes(search.debouncedValue.toLocaleLowerCase())
     )
   }, [search])
 

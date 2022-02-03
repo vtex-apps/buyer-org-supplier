@@ -1,6 +1,7 @@
 import type { ClientsConfig, ServiceContext } from '@vtex/api'
 import { LRUCache, method, Service } from '@vtex/api'
 
+import { resolvers } from './resolvers'
 import { Clients } from './clients'
 import { createBuyerOrg } from './routes/createBuyerOrg'
 
@@ -33,5 +34,8 @@ export default new Service({
     'buyer-org-supplier': method({
       POST: createBuyerOrg,
     }),
+  },
+  graphql: {
+    resolvers,
   },
 })

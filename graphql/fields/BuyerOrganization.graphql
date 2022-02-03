@@ -1,0 +1,10 @@
+input BuyerOrganizationInput {
+  id: String!
+  approved: Boolean!
+}
+
+type BuyerOrganization {
+  id: String!
+  name: String!
+  approved: Boolean!
+}
