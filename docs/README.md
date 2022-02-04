@@ -1,4 +1,4 @@
-📢 Use this project, [contribute](https://github.com/vtex-apps/buyer-org-supplier) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+=� Use this project, [contribute](https://github.com/vtex-apps/buyer-org-supplier) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
 # Buyer Organization Supplier
 
@@ -18,7 +18,7 @@ If you want to customize the data that will be stored in the Profile System, fol
 1. Clone the app [repository](https://github.com/vtex-apps/buyer-org-supplier).
 2. Change the `vendor` in the `manifest.json` file to the name of the account where you are logged in.
 3. Make the desired changes in the [`createBuyerOrg.ts`](https://github.com/vtex-apps/buyer-org-supplier/blob/main/node/routes/createBuyerOrg.ts) file. This file must inform the data you want to store in the Profile System. It will receive the informed Buyer Organization data and save this information in the Profile System database.
-    >⚠️ Do not change the `path` in the `service.json` file, or the Buyer Organization sign up process will fail.
+    >� Do not change the `path` in the `service.json` file, or the Buyer Organization sign up process will fail.
 
 4. Create a fork of the repository.
 5. [Publish the app](https://developers.vtex.com/vtex-developer-docs/docs/vtex-io-documentation-publishing-an-app).
@@ -34,9 +34,9 @@ Follow the steps below to install the app.
     vtex install {vendor}.buyer-org-supplier
     ```
 
-    >⚠️ Do not install both the default and customized versions of the app, or the Buyer Organization sign up process will fail.
+    >� Do not install both the default and customized versions of the app, or the Buyer Organization sign up process will fail.
 
-2. Add the app as a dependency in your theme’s `manifest.json` file, as shown below. Once again, if you opted to customize the app, replace `{vendor}` with the value you set for the `vendor` in the `manifest.json` file before. If you prefer to use the default app behavior, replace `{vendor}` with `vtex`.
+2. Add the app as a dependency in your themes `manifest.json` file, as shown below. Once again, if you opted to customize the app, replace `{vendor}` with the value you set for the `vendor` in the `manifest.json` file before. If you prefer to use the default app behavior, replace `{vendor}` with `vtex`.
 
     ```json
     "dependencies": {
@@ -45,7 +45,7 @@ Follow the steps below to install the app.
     ```
 
 
-## Contributors ✨
+## Contributors (
 
 Thanks goes to these wonderful people:
 
@@ -61,3 +61,8 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 <!-- DOCS-IGNORE:end -->
 
 ---- 
+
+
+**Upcoming documentation:**
+
+ - [build(deps): bump follow-redirects from 1.14.3 to 1.14.7 in /node](https://github.com/vtex-apps/buyer-org-supplier/pull/17)
